@@ -1,0 +1,11 @@
+framework module PayBright {
+  umbrella header "PayBright.h"
+
+  export *
+  module * { export * }
+}
+
+module PayBright.Swift {
+    header "PayBright-Swift.h"
+    requires objc
+}
