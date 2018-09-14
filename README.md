@@ -128,3 +128,9 @@ Example
 =======
 
 A demo app that integrates PayBright is included in the repo.
+
+
+Requirements
+=======
+
+Xcode 10 is required to use PayBright
