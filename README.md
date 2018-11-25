@@ -1,7 +1,7 @@
 PayBright iOS SDK
 ==============
 
-PayBright iOS SDK is a library written in swift that allows you to provide [PayBright](https://paybright.com/) payment option in your own app.
+PayBright iOS SDK is a library written in swift that allows you to add [PayBright](https://paybright.com/) as a payment option in your own app.
 
 Installation
 ============
