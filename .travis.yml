@@ -1,0 +1,14 @@
+language: swift
+os: osx
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - brew install git-lfs
+before_script:
+  - git lfs pull
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive PBDemo
+script:
+- set -o pipefail && xcodebuild test -workspace PBDemo.xcworkspace -scheme PBDemoTests -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' | xcpretty
+- pod lib lint
