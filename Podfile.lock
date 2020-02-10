@@ -1,16 +1,16 @@
 PODS:
-  - PayBright (0.1.2)
+  - PayBright (0.1.4)
 
 DEPENDENCIES:
   - PayBright
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - PayBright
 
 SPEC CHECKSUMS:
-  PayBright: 8c609e8dafcf5bb594e63b3750a19b7e8dd8ca9f
+  PayBright: c07c312d2bcd9da6df6bf1eaef05711b21e75822
 
-PODFILE CHECKSUM: a221bab0925553a864ebf4ad2f3d89d014dc74f2
+PODFILE CHECKSUM: 85ede3dfb866b98da96ec00b052e214e19868239
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.8.4

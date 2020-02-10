@@ -1,0 +1,77 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PayBright
+import CommonCrypto
+import Foundation
+@_exported import PayBright
+import SafariServices
+import Swift
+import UIKit
+import WebKit
+public class PBProduct {
+  public init(amount: Swift.Double, currency: Swift.String, description: Swift.String?, invoice: Swift.String?, planID: Swift.String?, platform: Swift.String, reference: Swift.String, shopCountry: Swift.String, shopName: Swift.String, urlCallback: Swift.String, urlCancel: Swift.String, urlComplete: Swift.String)
+  @objc deinit
+}
+public protocol PBWebViewDelegate : AnyObject {
+  func userDidCancel()
+  func transactionComplete(success: Swift.Bool, params: [Swift.String : Swift.String])
+}
+@objc public class PBViewController : UIKit.UIViewController, WebKit.WKNavigationDelegate, SafariServices.SFSafariViewControllerDelegate {
+  weak public var delegate: PayBright.PBWebViewDelegate?
+  @objc override dynamic public func viewDidLoad()
+  public func sampleSignature() -> Swift.String
+  @objc public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
+  @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @objc public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension URL {
+  public var queryParameters: [Swift.String : Swift.String]? {
+    get
+  }
+}
+@objc public class PBLog : ObjectiveC.NSObject {
+  @objc deinit
+}
+public class PBInstance {
+  public init(customerObj: PayBright.PBCustomer, customerBillingObj: PayBright.PBCustomerBilling, customerShippingObj: PayBright.PBCustomerShipping, productObj: PayBright.PBProduct)
+  @objc deinit
+}
+@objc public class PBConfig : ObjectiveC.NSObject {
+  public enum PBEnvironment : Swift.String {
+    case Sandbox
+    case Production
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public class var shared: PayBright.PBConfig {
+    get
+  }
+  public var environment: PayBright.PBConfig.PBEnvironment
+  public var accountID: Swift.String
+  public var apiToken: Swift.String
+  public var instanceObj: PayBright.PBInstance?
+  public func initialize(environment: PayBright.PBConfig.PBEnvironment, accountID: Swift.String, apiToken: Swift.String)
+  @objc deinit
+}
+public class PBCustomer {
+  public init(customerEmail: Swift.String, customerFirstName: Swift.String, customerLastName: Swift.String, customerPhone: Swift.String?)
+  @objc deinit
+}
+public class PBCustomerBilling {
+  public init(customerBillingAddress1: Swift.String, customerBillingAddress2: Swift.String?, customerBillingCity: Swift.String, customerBillingCompany: Swift.String?, customerBillingCountry: Swift.String, customerBillingPhone: Swift.String, customerBillingState: Swift.String, customerBillingZip: Swift.String)
+  @objc deinit
+}
+public class PBCustomerShipping {
+  public init(customerShippingAddress1: Swift.String, customerShippingAddress2: Swift.String?, customerShippingCity: Swift.String, customerShippingCompany: Swift.String?, customerShippingCountry: Swift.String, customerShippingFirstName: Swift.String, customerShippingLastName: Swift.String, customerShippingPhone: Swift.String, customerShippingState: Swift.String, customerShippingZip: Swift.String)
+  @objc deinit
+}
+extension PayBright.PBConfig.PBEnvironment : Swift.Hashable {}
+extension PayBright.PBConfig.PBEnvironment : Swift.RawRepresentable {}
